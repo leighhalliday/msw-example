@@ -1,8 +1,7 @@
-# Mocking Fetch in Jest
+# Don't Mock Fetch
 
-This is the code for a 3 part video series about mocking fetch in jest tests.
+Test like a user with Mock Service Worker.
 
-- Video 1 (Manual Mock): https://youtu.be/mHXhuPHiDj8
-- Video 2 (Using Package): Coming soon
-- Video 3 (Testing React): Coming soon
-- Article: https://www.leighhalliday.com/mock-fetch-jest
+- Video (English): Coming Soon
+- Video (Spanish): Coming Soon
+- Package: https://redd.gitbook.io/msw/
