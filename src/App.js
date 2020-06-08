@@ -6,8 +6,8 @@ export default function App() {
   const [base, dest] = ["USD", "CAD"];
   const { data: rate, error } = useSWR([base, dest], convert);
 
-  if (error) return <span>"Error!"</span>;
-  if (!rate) return <span>"Loading!"</span>;
+  if (error) return <span>Error!</span>;
+  if (!rate) return <span>Loading!</span>;
 
   return (
     <div>

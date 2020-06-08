@@ -1,8 +1,10 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { SWRConfig } from "swr";
+import { SWRConfig, cache } from "swr";
 import App from "./App";
 import { server, rest } from "./testServer";
+
+afterEach(() => cache.clear());
 
 test("renders learn react link", async () => {
   const { findByText } = render(
@@ -14,12 +16,13 @@ test("renders learn react link", async () => {
   expect(element).toBeInTheDocument();
 });
 
-test("renders error when request fails", async () => {
+test("handles errors", async () => {
   server.use(
     rest.get("https://api.exchangeratesapi.io/latest", (_req, res, ctx) => {
       return res(ctx.status(404));
     })
   );
+
   const { findByText } = render(
     <SWRConfig value={{ dedupingInterval: 0 }}>
       <App />
